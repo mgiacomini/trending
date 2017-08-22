@@ -1,0 +1,21 @@
+AllCops:
+  Exclude:
+    - db/schema.rb
+
+AbcSize:
+  Enabled: false
+
+BlockLength:
+  Enabled: false
+
+MethodLength:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 100
+
+Style/Lambda:
+  Enabled: false
