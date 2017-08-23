@@ -1,4 +1,4 @@
-<div class="section section-image section-login" style="background-image: url('<%= image_url 'login-image.jpg' %>');">
+<div class="section">
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
@@ -22,7 +22,7 @@
               <td><%= repository.forks_count %></td>
               <td><%= repository.watchers_count %></td>
               <td><%= repository.name %></td>
-              <td><%= link_to 'Show', repository, class: 'btn btn-outline-neutral btn-round' %></td>
+              <td><%= link_to 'Show', repository, class: 'btn btn-outline-danger btn-round' %></td>
             </tr>
             <% end %>
           </tbody>
