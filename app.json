@@ -1,0 +1,15 @@
+{
+  "name": "Github Trendings",
+  "description": "Find and list trending repositories",
+  "repository": "https://github.com/mgiacomini/trending",
+  "keywords": ["ruby", "rails", "github"],
+  "addons": ["heroku-postgresql:hobby-dev"],
+  "env": {
+    "RAILS_ENV": "production",
+    "OCTOKIT_CLIENT_LOGIN": "",
+    "OCTOKIT_CLIENT_PASSWORD": ""
+  },
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  }
+}
