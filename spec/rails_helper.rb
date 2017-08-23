@@ -6,6 +6,7 @@ abort 'The Rails environment is running in production mode!' if Rails.env.produc
 require 'rspec/rails'
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+Dir[Rails.root.join('spec/fixtures/**/*.rb')].each { |f| require f }
 
 ActiveRecord::Migration.maintain_test_schema!
 
