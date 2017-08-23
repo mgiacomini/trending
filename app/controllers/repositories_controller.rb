@@ -1,29 +1,32 @@
 class RepositoriesController < ApplicationController
-  before_action :set_repository, only: [:show, :edit, :update, :destroy]
+  before_action :set_repository, only: :show
 
   def search
-    @repositories = Repositories::GithubTrendingService.search query, 10
+    @repositories = Repositories::GithubTrendingService.search query, limit
   end
 
-  # GET /repositories
   def index
     @repositories = Repository.all
   end
 
-  # GET /repositories/1
   def show
   end
 
   private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_repository
-      @repository = Repository.find(params[:id])
-    end
+  def set_repository
+    @repository = Repository.find(params[:id])
+  end
 
-    def query
-      language = params.fetch :language, 'ruby'
+  def query
+    "language:#{language}"
+  end
 
-      "language:#{language}"
-    end
+  def language
+    params.fetch :language, 'ruby'
+  end
+
+  def limit
+    params.fetch :limit, 10
+  end
 end

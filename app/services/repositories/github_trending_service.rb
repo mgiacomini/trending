@@ -1,16 +1,16 @@
 module Repositories
   class GithubTrendingService < ApplicationService
 
-    def self.search(query, limit=10)
+    def self.search(query, limit = 10)
       new.search query, limit
     end
 
-    def search(query, limit=10)
-      map_repositories Octokit.search_repositories(query, {
+    def search(query, limit = 10)
+      map_repositories Octokit.search_repositories query, {
         sort: 'stars',
         order: 'desc',
         limit: limit
-      })
+      }
     end
 
     private
@@ -21,7 +21,7 @@ module Repositories
       end
     end
 
-    def build_repository(repository={})
+    def build_repository(repository = {})
       Repository.create_with(
         language: repository[:language],
         forks_count: repository[:forks_count],
@@ -31,6 +31,5 @@ module Repositories
         url: repository[:url]
       ).find_or_create_by github_id: repository[:id]
     end
-
   end
 end
