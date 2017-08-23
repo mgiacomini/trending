@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Repositories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Github</th>
+      <th>Language</th>
+      <th>Forks count</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Watchers count</th>
+      <th>Url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @repositories.each do |repository| %>
+      <tr>
+        <td><%= repository.github_id %></td>
+        <td><%= repository.language %></td>
+        <td><%= repository.forks_count %></td>
+        <td><%= repository.name %></td>
+        <td><%= repository.description %></td>
+        <td><%= repository.watchers_count %></td>
+        <td><%= repository.url %></td>
+        <td><%= link_to 'Show', repository %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

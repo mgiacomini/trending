@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Github:</strong>
+  <%= @repository.github_id %>
+</p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @repository.language %>
+</p>
+
+<p>
+  <strong>Forks count:</strong>
+  <%= @repository.forks_count %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @repository.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @repository.description %>
+</p>
+
+<p>
+  <strong>Watchers count:</strong>
+  <%= @repository.watchers_count %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @repository.url %>
+</p>
+
+<%= link_to 'Edit', edit_repository_path(@repository) %> |
+<%= link_to 'Back', repositories_path %>
