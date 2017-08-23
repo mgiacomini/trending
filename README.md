@@ -11,3 +11,7 @@ This is a very basicccc app!
 
 ## how to test?
  ``` $ rspec ```
+
+## setup dev env
+ ``` $ rake db:setup ```
+ ``` $ rails s ```
