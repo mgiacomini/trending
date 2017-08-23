@@ -1,0 +1,35 @@
+<div class="section section-image section-login" style="background-image: url('<%= image_url 'login-image.jpg' %>');">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 offset-md-2">
+        <% unless @current_language.nil? %>
+          <p>You are seeing trending repositories for: <%= @current_language %></p>
+        <% end %>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Language</th>
+              <th>Forks count</th>
+              <th>Watchers count</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody>
+          <% repositories.each do |repository| %>
+            <tr>
+              <td><%= repository.language %></td>
+                <td><%= repository.forks_count %></td>
+                <td><%= repository.watchers_count %></td>
+                <td><%= repository.name %></td>
+                <td><%= repository.description %></td>
+                <td><%= link_to 'Show', repository %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
