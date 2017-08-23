@@ -6,6 +6,10 @@ RSpec.describe RepositoriesController, type: :routing do
       expect(get: '/repositories').to route_to 'repositories#index'
     end
 
+    it 'routes to #search' do
+      expect(get: '/repositories/search').to route_to 'repositories#search'
+    end
+
     it 'routes to #show' do
       expect(get: '/repositories/1').to route_to 'repositories#show', id: '1'
     end
