@@ -15,3 +15,5 @@ This is a very basicccc app!
 ## setup dev env
  ``` $ rake db:setup ```
  ``` $ rails s ```
+
+testing
